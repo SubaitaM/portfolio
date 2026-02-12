@@ -1,200 +1,85 @@
-let currentPage = 0;
-const pages = document.querySelectorAll('.page');
-const totalPages = pages.length;
+// Smooth section navigation
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section');
 
-// Initialize
-function init() {
-    showPage(currentPage);
-    createPageDots();
-    updateNavigation();
-}
-
-// Show specific page
-function showPage(pageIndex) {
-    // Remove active class from all pages
-    pages.forEach(page => {
-        page.classList.remove('active', 'flipping-out', 'flipping-in');
-        page.style.display = 'none';
+// Update active nav link on click
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        link.classList.add('active');
+        
+        // Get target section
+        const targetId = link.getAttribute('data-section');
+        const targetSection = document.getElementById(targetId);
+        
+        // Hide all sections
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Show target section with animation
+        setTimeout(() => {
+            targetSection.classList.add('active');
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     });
-    
-    // Show current page
-    if (pages[pageIndex]) {
-        pages[pageIndex].classList.add('active');
-        pages[pageIndex].style.display = 'grid';
-    }
-    
-    updateNavigation();
-    updatePageDots();
-    updatePageIndicator();
-}
+});
 
-// Navigate to next page
-function nextPage() {
-    if (currentPage < totalPages - 1) {
-        const currentPageEl = pages[currentPage];
-        const nextPageEl = pages[currentPage + 1];
-        
-        // Animate current page out
-        currentPageEl.classList.add('flipping-out');
-        
-        // After animation, show next page
-        setTimeout(() => {
-            currentPage++;
-            nextPageEl.style.display = 'grid';
-            nextPageEl.classList.add('active', 'flipping-in');
-            currentPageEl.classList.remove('active', 'flipping-out');
-            currentPageEl.style.display = 'none';
+// Update active nav based on scroll position
+const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
             
-            // Remove flipping-in class after animation
-            setTimeout(() => {
-                nextPageEl.classList.remove('flipping-in');
-            }, 800);
-            
-            updateNavigation();
-            updatePageDots();
-            updatePageIndicator();
-        }, 400);
-    }
-}
-
-// Navigate to previous page
-function previousPage() {
-    if (currentPage > 0) {
-        const currentPageEl = pages[currentPage];
-        const prevPageEl = pages[currentPage - 1];
-        
-        // Animate current page out
-        currentPageEl.classList.add('flipping-out');
-        
-        // After animation, show previous page
-        setTimeout(() => {
-            currentPage--;
-            prevPageEl.style.display = 'grid';
-            prevPageEl.classList.add('active', 'flipping-in');
-            currentPageEl.classList.remove('active', 'flipping-out');
-            currentPageEl.style.display = 'none';
-            
-            // Remove flipping-in class after animation
-            setTimeout(() => {
-                prevPageEl.classList.remove('flipping-in');
-            }, 800);
-            
-            updateNavigation();
-            updatePageDots();
-            updatePageIndicator();
-        }, 400);
-    }
-}
-
-// Go to specific page
-function goToPage(pageIndex) {
-    if (pageIndex >= 0 && pageIndex < totalPages && pageIndex !== currentPage) {
-        const currentPageEl = pages[currentPage];
-        const targetPageEl = pages[pageIndex];
-        
-        // Animate current page out
-        currentPageEl.classList.add('flipping-out');
-        
-        // After animation, show target page
-        setTimeout(() => {
-            currentPage = pageIndex;
-            targetPageEl.style.display = 'grid';
-            targetPageEl.classList.add('active', 'flipping-in');
-            currentPageEl.classList.remove('active', 'flipping-out');
-            currentPageEl.style.display = 'none';
-            
-            // Remove flipping-in class after animation
-            setTimeout(() => {
-                targetPageEl.classList.remove('flipping-in');
-            }, 800);
-            
-            updateNavigation();
-            updatePageDots();
-            updatePageIndicator();
-        }, 400);
-    }
-}
-
-// Update navigation buttons
-function updateNavigation() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    prevBtn.disabled = currentPage === 0;
-    nextBtn.disabled = currentPage === totalPages - 1;
-}
-
-// Update page indicator
-function updatePageIndicator() {
-    const indicator = document.getElementById('pageIndicator');
-    
-    // Get the data-page attribute or use index
-    const pageNum = pages[currentPage].getAttribute('data-page') || currentPage;
-    
-    if (currentPage === 0) {
-        indicator.textContent = 'Cover';
-    } else {
-        indicator.textContent = `Page ${pageNum}`;
-    }
-}
-
-// Create page dots for navigation
-function createPageDots() {
-    const dotsContainer = document.getElementById('pageDots');
-    dotsContainer.innerHTML = '';
-    
-    for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.onclick = () => goToPage(i);
-        dotsContainer.appendChild(dot);
-    }
-}
-
-// Update page dots
-function updatePageDots() {
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        if (index === currentPage) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
+            // Update nav
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
         }
     });
-}
+}, observerOptions);
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        previousPage();
-    } else if (e.key === 'ArrowRight') {
-        nextPage();
-    }
+// Observe all sections
+sections.forEach(section => {
+    observer.observe(section);
 });
 
-// Swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
+// Smooth reveal on scroll
+const revealElements = document.querySelectorAll('.project-card, .blog-post');
 
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, {
+    threshold: 0.1
 });
 
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
+revealElements.forEach(el => {
+    revealObserver.observe(el);
 });
 
-function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-        // Swipe left - next page
-        nextPage();
+// Initialize first section
+document.addEventListener('DOMContentLoaded', () => {
+    const firstSection = document.querySelector('.section');
+    if (firstSection) {
+        firstSection.classList.add('active');
     }
-    if (touchEndX > touchStartX + 50) {
-        // Swipe right - previous page
-        previousPage();
-    }
-}
-
-// Initialize on load
-window.addEventListener('load', init);
+});

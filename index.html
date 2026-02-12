@@ -3,216 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Science Portfolio</title>
+    <title>Your Name - Data Science</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="book-container">
-        <!-- Book -->
-        <div class="book" id="book">
-            
-            <!-- Page 0-1: Cover -->
-            <div class="page" data-page="0">
-                <div class="page-content cover-page">
-                    <h1>Data Stories</h1>
-                    <p class="subtitle">A Portfolio by Your Name</p>
-                    <p class="cover-hint">Click the corner to begin →</p>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <h2>YN</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#blog" class="nav-link" data-section="blog">Blog</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <span class="greeting">Hi, I'm</span>
+                    <h1 class="name">Your Name</h1>
+                    <p class="tagline">Data Scientist exploring the stories hidden in numbers</p>
+                    <p class="bio">
+                        I'm interested in the intersection of culture, psychology, and data. 
+                        My work focuses on asking questions that connect human experience with 
+                        quantitative analysis—from exploring how economic conditions influence music, 
+                        to investigating universal vs. cultural patterns in color perception.
+                    </p>
+                    <div class="skills-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Statistical Analysis</span>
+                        <span class="tag">NLP</span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Page 2-3: About & Projects -->
-            <div class="page" data-page="2">
-                <div class="page-content left-page">
-                    <h2>About Me</h2>
-                    <p>Hi! I'm a data scientist who loves finding stories hidden in numbers. I'm particularly interested in the intersection of culture, psychology, and data.</p>
-                    
-                    <p>My work focuses on asking questions that connect human experience with quantitative analysis. Whether it's exploring how economic conditions influence music, or investigating universal vs. cultural patterns in color perception, I believe data can reveal fascinating truths about our world.</p>
-                    
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Python (pandas, numpy, scikit-learn)</li>
-                        <li>Data Visualization (matplotlib, seaborn, plotly)</li>
-                        <li>Statistical Analysis</li>
-                        <li>Machine Learning</li>
-                    </ul>
-                </div>
-                <div class="page-content right-page">
-                    <h2>Featured Projects</h2>
-                    
-                    <div class="project-item">
-                        <h3>Recession Music Analysis</h3>
-                        <p>Does economic hardship create a distinct musical signature? Analyzing Billboard Hot 100 data across economic cycles.</p>
-                        <a href="#" class="project-link">View Analysis →</a>
-                    </div>
-                    
-                    <div class="project-item">
-                        <h3>Global Color Emotions</h3>
-                        <p>Investigating whether color-emotion associations are universal or culturally specific across 30+ countries.</p>
-                        <a href="#" class="project-link">View Analysis →</a>
-                    </div>
-                    
-                    <div class="project-item">
-                        <h3>Project 3</h3>
-                        <p>Brief description of another project you've worked on.</p>
-                        <a href="#" class="project-link">View Analysis →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Page 4-5: Blog Posts List -->
-            <div class="page" data-page="4">
-                <div class="page-content left-page">
-                    <h2>Blog Posts</h2>
-                    <p class="section-intro">Deep dives into data questions that fascinate me.</p>
-                    
-                    <div class="blog-item" onclick="goToPage(6)">
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="project-card">
+                    <div class="project-header">
                         <h3>Does Recession Music Exist?</h3>
-                        <p class="blog-date">January 2024</p>
-                        <p>Exploring whether economic downturns create identifiable patterns in popular music through sentiment analysis and audio features.</p>
-                        <span class="read-more">Read more →</span>
+                        <span class="project-date">Jan 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Analyzing 50 years of Billboard Hot 100 data to uncover whether economic 
+                        downturns leave an audible fingerprint on popular music. Combined economic 
+                        indicators with Spotify audio features and lyric sentiment analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-small">Python</span>
+                        <span class="tag-small">Time Series</span>
+                        <span class="tag-small">NLP</span>
+                        <span class="tag-small">Spotify API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-secondary">View Analysis</a>
+                        <a href="https://github.com/yourusername/recession-music" class="btn-link">GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Global Color Emotions</h3>
+                        <span class="project-date">Dec 2023</span>
+                    </div>
+                    <p class="project-description">
+                        Cross-cultural analysis of color-emotion associations across 30+ countries. 
+                        Investigating whether perceptions like "blue = sad" are universal or 
+                        culturally specific through survey data and clustering analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-small">Python</span>
+                        <span class="tag-small">Clustering</span>
+                        <span class="tag-small">Survey Analysis</span>
+                        <span class="tag-small">Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-secondary">View Analysis</a>
+                        <a href="https://github.com/yourusername/color-emotions" class="btn-link">GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Your Next Project</h3>
+                        <span class="project-date">Nov 2023</span>
+                    </div>
+                    <p class="project-description">
+                        Brief description of another interesting project you've worked on. 
+                        What question were you trying to answer? What data did you use?
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag-small">Python</span>
+                        <span class="tag-small">pandas</span>
+                        <span class="tag-small">scikit-learn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-secondary">View Analysis</a>
+                        <a href="#" class="btn-link">GitHub →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title">Blog</h2>
+                
+                <article class="blog-post">
+                    <div class="blog-header">
+                        <h3>Does Recession Music Exist?</h3>
+                        <span class="blog-date">January 2024</span>
                     </div>
                     
-                    <div class="blog-item" onclick="goToPage(8)">
+                    <div class="blog-content">
+                        <h4>The Question</h4>
+                        <p>When the economy crashes, does our music change? I wanted to know if recessions leave an audible fingerprint on popular music.</p>
+                        
+                        <h4>The Data</h4>
+                        <p>I analyzed 50 years of Billboard Hot 100 data, combining it with:</p>
+                        <ul>
+                            <li>Economic indicators (GDP growth, unemployment rates)</li>
+                            <li>Spotify audio features (valence, energy, tempo)</li>
+                            <li>Lyric sentiment analysis</li>
+                        </ul>
+                        
+                        <h4>Key Findings</h4>
+                        <p><strong>1. Songs get slower during recessions</strong><br>
+                        Average tempo dropped by 8-12 BPM during major downturns (1982, 2008).</p>
+                        
+                        <p><strong>2. Lyrical nostalgia increases</strong><br>
+                        References to "old times," "remember," and past decades spiked 40% during recession periods.</p>
+                        
+                        <p><strong>3. But not necessarily sadder</strong><br>
+                        Surprisingly, valence (musical positivity) remained stable. Songs were slower and more reflective, but not more negative.</p>
+                        
+                        <h4>The Surprising Twist</h4>
+                        <p>The strongest correlation wasn't with recession timing—it was with recovery. The most upbeat, energetic music appeared 6-12 months after unemployment peaked, suggesting music reflects hope for recovery more than current hardship.</p>
+                        
+                        <h4>Methods</h4>
+                        <p>Python analysis using pandas, spotipy API, VADER sentiment analysis, and statsmodels for time series regression.</p>
+                        
+                        <div class="blog-footer">
+                            <a href="https://github.com/yourusername/recession-music" class="btn-link">View Code on GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-header">
                         <h3>Universal Blue: Color Emotions Across Cultures</h3>
-                        <p class="blog-date">December 2023</p>
-                        <p>Do all cultures perceive blue as sad? A cross-cultural analysis of color-emotion associations using survey data from 30 countries.</p>
-                        <span class="read-more">Read more →</span>
-                    </div>
-                </div>
-                <div class="page-content right-page">
-                    <h2>More Posts</h2>
-                    
-                    <div class="blog-item" onclick="goToPage(10)">
-                        <h3>Your Third Blog Post</h3>
-                        <p class="blog-date">November 2023</p>
-                        <p>A brief description of what this post is about and what insights you uncovered.</p>
-                        <span class="read-more">Read more →</span>
+                        <span class="blog-date">December 2023</span>
                     </div>
                     
-                    <div class="blog-item">
-                        <h3>Your Fourth Blog Post</h3>
-                        <p class="blog-date">October 2023</p>
-                        <p>Another interesting analysis you've done with a brief teaser.</p>
-                        <span class="read-more">Read more →</span>
+                    <div class="blog-content">
+                        <h4>The Question</h4>
+                        <p>Is blue universally perceived as sad? Do Japanese speakers associate colors with emotions differently than Spanish speakers?</p>
+                        
+                        <h4>The Data</h4>
+                        <p>I analyzed survey data from 30 countries (n=4,598) where participants rated how strongly they associated 12 colors with 20 emotions.</p>
+                        
+                        <h4>Universal Patterns</h4>
+                        <p><strong>Red = Anger/Love:</strong> 96% cross-cultural agreement<br>
+                        <strong>Yellow = Happy:</strong> 89% agreement<br>
+                        <strong>Black = Sad/Fear:</strong> 87% agreement</p>
+                        
+                        <h4>The Blue Surprise</h4>
+                        <p>Blue showed the most cultural variation. While 71% of Western respondents associated blue with sadness, only 34% of East Asian respondents did. Instead, blue was strongly associated with "calm" and "trust."</p>
+                        
+                        <h4>Cultural Clusters</h4>
+                        <p>K-means clustering revealed three distinct color-emotion patterns:</p>
+                        <ul>
+                            <li><strong>Western cluster:</strong> Blue=sad, purple=mysterious</li>
+                            <li><strong>East Asian cluster:</strong> Blue=calm, white=death</li>
+                            <li><strong>Latin American cluster:</strong> Stronger warm color emotions</li>
+                        </ul>
+                        
+                        <h4>Methods</h4>
+                        <p>Statistical analysis using scikit-learn, hierarchical clustering, and cultural dimension correlation analysis.</p>
+                        
+                        <div class="blog-footer">
+                            <a href="https://github.com/yourusername/color-emotions" class="btn-link">View Code on GitHub →</a>
+                        </div>
                     </div>
-                </div>
+                </article>
+
             </div>
+        </section>
 
-            <!-- Page 6-7: Blog Post 1 -->
-            <div class="page" data-page="6">
-                <div class="page-content left-page blog-post">
-                    <h2>Does Recession Music Exist?</h2>
-                    <p class="blog-date">January 2024</p>
-                    
-                    <h3>The Question</h3>
-                    <p>When the economy crashes, does our music change? I wanted to know if recessions leave an audible fingerprint on popular music.</p>
-                    
-                    <h3>The Data</h3>
-                    <p>I analyzed 50 years of Billboard Hot 100 data, combining it with:</p>
-                    <ul>
-                        <li>Economic indicators (GDP growth, unemployment rates)</li>
-                        <li>Spotify audio features (valence, energy, tempo)</li>
-                        <li>Lyric sentiment analysis</li>
-                    </ul>
-                    
-                    <h3>Key Findings</h3>
-                    <p><strong>1. Songs get slower during recessions</strong><br>
-                    Average tempo dropped by 8-12 BPM during major downturns (1982, 2008).</p>
-                </div>
-                <div class="page-content right-page blog-post">
-                    <p><strong>2. Lyrical nostalgia increases</strong><br>
-                    References to "old times," "remember," and past decades spiked 40% during recession periods.</p>
-                    
-                    <p><strong>3. But not necessarily sadder</strong><br>
-                    Surprisingly, valence (musical positivity) remained stable. Songs were slower and more reflective, but not more negative.</p>
-                    
-                    <h3>The Surprising Twist</h3>
-                    <p>The strongest correlation wasn't with recession timing—it was with recovery. The most upbeat, energetic music appeared 6-12 months after unemployment peaked, suggesting music reflects hope for recovery more than current hardship.</p>
-                    
-                    <h3>Methods</h3>
-                    <p>Python analysis using pandas, spotipy API, VADER sentiment analysis, and statsmodels for time series regression.</p>
-                    
-                    <p class="blog-footer"><a href="#">← Back to Blog</a> | <a href="https://github.com/yourusername/recession-music">View Code</a></p>
-                </div>
-            </div>
-
-            <!-- Page 8-9: Blog Post 2 -->
-            <div class="page" data-page="8">
-                <div class="page-content left-page blog-post">
-                    <h2>Universal Blue: Color Emotions Across Cultures</h2>
-                    <p class="blog-date">December 2023</p>
-                    
-                    <h3>The Question</h3>
-                    <p>Is blue universally perceived as sad? Do Japanese speakers associate colors with emotions differently than Spanish speakers?</p>
-                    
-                    <h3>The Data</h3>
-                    <p>I analyzed survey data from 30 countries (n=4,598) where participants rated how strongly they associated 12 colors with 20 emotions.</p>
-                    
-                    <h3>Universal Patterns</h3>
-                    <p><strong>Red = Anger/Love:</strong> 96% cross-cultural agreement<br>
-                    <strong>Yellow = Happy:</strong> 89% agreement<br>
-                    <strong>Black = Sad/Fear:</strong> 87% agreement</p>
-                </div>
-                <div class="page-content right-page blog-post">
-                    <h3>The Blue Surprise</h3>
-                    <p>Blue showed the most cultural variation. While 71% of Western respondents associated blue with sadness, only 34% of East Asian respondents did. Instead, blue was strongly associated with "calm" and "trust."</p>
-                    
-                    <h3>Cultural Clusters</h3>
-                    <p>K-means clustering revealed three distinct color-emotion patterns:</p>
-                    <ul>
-                        <li><strong>Western cluster:</strong> Blue=sad, purple=mysterious</li>
-                        <li><strong>East Asian cluster:</strong> Blue=calm, white=death</li>
-                        <li><strong>Latin American cluster:</strong> Stronger warm color emotions</li>
-                    </ul>
-                    
-                    <h3>Methods</h3>
-                    <p>Statistical analysis using scikit-learn, hierarchical clustering, and cultural dimension correlation analysis.</p>
-                    
-                    <p class="blog-footer"><a href="#">← Back to Blog</a> | <a href="https://github.com/yourusername/color-emotions">View Code</a></p>
-                </div>
-            </div>
-
-            <!-- Page 10-11: Blog Post 3 Template -->
-            <div class="page" data-page="10">
-                <div class="page-content left-page blog-post">
-                    <h2>Your Third Blog Post Title</h2>
-                    <p class="blog-date">November 2023</p>
-                    
-                    <h3>Introduction</h3>
-                    <p>Start with the question or problem you wanted to explore. What made you curious about this topic?</p>
-                    
-                    <h3>The Data</h3>
-                    <p>Describe your data sources and how you collected/accessed them.</p>
-                    
-                    <h3>Analysis Approach</h3>
-                    <p>Explain your methodology in accessible terms.</p>
-                </div>
-                <div class="page-content right-page blog-post">
-                    <h3>Key Findings</h3>
-                    <p>What did you discover? Use specific numbers and clear statements.</p>
-                    
-                    <h3>Implications</h3>
-                    <p>What does this mean? Why does it matter?</p>
-                    
-                    <h3>Limitations</h3>
-                    <p>Be honest about what your analysis couldn't capture or questions that remain.</p>
-                    
-                    <p class="blog-footer"><a href="#">← Back to Blog</a> | <a href="#">View Code</a></p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Navigation -->
-        <div class="nav-container">
-            <button id="prevBtn" onclick="previousPage()">←</button>
-            <span id="pageIndicator">Page 1</span>
-            <button id="nextBtn" onclick="nextPage()">→</button>
-        </div>
-
-        <!-- Page dots -->
-        <div class="page-dots" id="pageDots"></div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
