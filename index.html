@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[AGENCY NAME]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- ── NAVBAR ── -->
+  <div class="navbar-positioner">
+    <nav class="navbar liquid-glass" id="navbar">
+      <div class="nav-left">
+      </div>
+      <div class="nav-center">
+        <a href="#services">Experience</a>
+        <a href="#work">Projects</a>
+        <a href="#pricing">Case studies</a>
+      </div>
+      <div class="nav-right"></div>
+    </nav>
+  </div>
+
+  <!-- ── HERO SECTION ── -->
+  <section class="hero-section" id="hero">
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Particle canvas (floating dust) -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Hero Content -->
+    <div class="hero-content" id="hero-content">
+      <!-- Particle Title Canvas -->
+      <div class="particle-title-wrap">
+        <canvas id="particle-title" aria-label="Subaita Mamun"></canvas>
+      </div>
+
+      <!-- Subtext -->
+      <p class="hero-sub animate-fade-up" style="animation-delay: 0.8s;">
+        Hi there! I'm a computing science undergraduate student at the University of Alberta and an aspiring data and ML scientist. 
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas animate-fade-up" style="animation-delay: 1.1s;">
+        <a href="https://www.linkedin.com/in/subaita-mamun/" class="btn-glass-strong" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="https://github.com/SubaitaM" class="btn-glass-strong" target="_blank" rel="noopener noreferrer">
+          GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom fade to black -->
+    <div class="hero-bottom-fade"></div>
+  </section>
+
+  <!-- ── INTRO SECTION ── -->
+  <section class="intro-section" id="services">
+    <div class="intro-content">
+      <h2 class="heading-display animate-on-scroll">
+        A little about me
+      </h2>
+      <div class="intro-bio animate-on-scroll">
+        <p class="bio-label">I am a:</p>
+        <ul class="bio-list">
+          <li>4th year computing science undergraduate student at the University of Alberta</li>
+          <li>I love the intersection of technology and social good/biology</li>
+        </ul>
+
+        <p class="bio-label">My experiences are:</p>
+        <ul class="bio-list">
+          <li>Data Science intern at the Canadian Museum of Nature</li>
+          <li>Data Engineer at NAT</li>
+        </ul>
+
+        <p class="bio-label">I am skilled in:</p>
+        <div class="bubble-tags" role="list">
+          <span class="bubble-tag" role="listitem">Data Visualization</span>
+          <span class="bubble-tag" role="listitem">Deep Learning frameworks</span>
+          <span class="bubble-tag" role="listitem">Data Engineering</span>
+          <span class="bubble-tag" role="listitem">Machine Learning</span>
+          <span class="bubble-tag" role="listitem">SQL &amp; Data Modeling</span>
+          <span class="bubble-tag" role="listitem">Python</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-bottom-fade"></div>
+  </section>
+
+  <!-- ── FEATURES SECTION ── -->
+  <section class="features-section" id="work">
+    <div class="features-content">
+      <div class="features-header">
+        <h2 class="heading-display animate-on-scroll">
+          Here are some of my projects!
+        </h2>
+        <p class="body-text animate-on-scroll">Click on a project to visit the repository.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Card 1 -->
+        <a href="https://github.com/naved201/Aura-Farming" class="feature-card project-card-link animate-on-scroll group" style="animation-delay: 0s;" target="_blank" rel="noopener noreferrer">
+          <div class="card-shimmer"></div>
+          <span class="card-number">01</span>
+          <h3 class="card-title">Soilution</h3>
+          <p class="card-desc">A time-series forecasting project for optimizing irrigation decisions, awarded 1st place at natHacks.</p>
+          <div class="card-tags">
+            <span class="bubble-tag bubble-tag--card">Time series</span>
+            <span class="bubble-tag bubble-tag--card">Python</span>
+            <span class="bubble-tag bubble-tag--card">Feature Engineering</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://github.com/SubaitaM/curator-AI" class="feature-card project-card-link animate-on-scroll group" style="animation-delay: 0.1s;" target="_blank" rel="noopener noreferrer">
+          <div class="card-shimmer"></div>
+          <span class="card-number">02</span>
+          <h3 class="card-title">Curator-AI</h3>
+          <p class="card-desc">A natural language search system for specimen images combining multimodal embeddings, vector search, metadata filtering, and personalized recommendations.</p>
+          <div class="card-tags">
+            <span class="bubble-tag bubble-tag--card">NLP</span>
+            <span class="bubble-tag bubble-tag--card">Personalized Recommendation</span>
+            <span class="bubble-tag bubble-tag--card">Multimodal</span>
+            <span class="bubble-tag bubble-tag--card">Python</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA SECTION ── -->
+  <section class="cta-section" id="cta">
+    <div class="cta-content">
+      <h2 class="heading-display animate-on-scroll">
+        Other side projects
+      </h2>
+      <div class="cards-grid questions-grid animate-on-scroll">
+        <a href="https://github.com/SubaitaM/sounds-of-the-economy/blob/main/songs_of_the_economy.ipynb" class="feature-card project-card-link" target="_blank" rel="noopener noreferrer">
+          <div class="card-shimmer"></div>
+          <span class="card-number">01</span>
+          <h3 class="card-title">Is recession music a real thing?</h3>
+          <p class="card-desc">Does music sound better when the economy is bad? I investigated this hypothesis to find out, click to read more!</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" id="pricing">
+    <div class="footer-inner">
+      <div class="footer-row">
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
