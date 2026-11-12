@@ -149,7 +149,8 @@
     margin-top: -6px; /* overlap borders so shared edges are one line */
     height: 250px;
   }
-  #left   { flex: 0 0 150px; }
+  #left   { flex: 0 0 150px; overflow: hidden; }
+  #left img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
   #middle { flex: 1; margin-left: -6px; }
   #right  { flex: 0 0 200px; margin-left: -6px; }
 
@@ -380,7 +381,7 @@
 
     <div id="about"></div>
     <div id="columns">
-      <div id="left" class="box"></div>
+      <div id="left" class="box"><img src="photos/subaita.jpg" alt="Subaita Mamun"></div>
       <div id="middle" class="box">
         <h2 class="title">Hello!</h2>
         <p>I'm a 4th year Computing Science student at the University of Alberta. I find making sense of data and uncovering patterns that aren't immediately obvious really exciting. In my free time I like junk journaling and painting.</p>
